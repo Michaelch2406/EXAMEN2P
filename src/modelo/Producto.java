@@ -13,4 +13,15 @@ public class Producto {
     private String codigo;
     private String nombre;
     private String fechaVence;
+
+    public Producto() {
+    }
+
+    public Producto(int idProducto, String codigo, String nombre, String fechaVence) {
+        this.idProducto = idProducto;
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.fechaVence = fechaVence;
+    }
+    
 }

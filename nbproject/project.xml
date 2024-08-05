@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+<<<<<<< HEAD
             <name>EXAMEN2P</name>
+=======
+            <name>Turnero Respuesta Solicitudes SecretariaG</name>
+>>>>>>> 191410c6179275d69b86c58ec79dc34d4165c6c2
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
