@@ -23,24 +23,24 @@ public class ProductoControlador {
     PreparedStatement ejecutar; //Ayuda a ejecutar la consulta que nosostros enviemos
     ResultSet resultado;
     
-    public boolean insertarProducto(Producto p, int idProveedor) {
+    public boolean crearProducto(Producto p, int idProveedor) {
         try {
             String consultaSQL = "INSERT INTO producto (Pr_Codigo, Pr_Nombre, Pr_FechaVence, Pr_Precio, Pr_CantidadStock, Pr_Tipo, Pro_Id) VALUES ('"+generarCodigoProducto()+"','"+p.getNombre()+"','"+p.getFechaVence()+"','"+p.getPrecio()+"','"+p.getCantStock()+"','"+p.getTipo()+"','"+p.getIdProveedor()+"')";
-            ejecutar = (PreparedStatement) connection.prepareCall(consultaSQL);
-            ejecutar.setString(1, producto.getCodigo());
-            ejecutar.setString(2, producto.getNombre());
-            ejecutar.setString(4, producto.getFechaVence());
-            ejecutar.setDouble(5, producto.getPrecio());
-            ejecutar.setInt(6, producto.getCantStock());
-            ejecutar.setString(7, producto.getTipo());
-            ejecutar.setInt(8, idProveedor);
+            ejecutar = (PreparedStatement) connection.prepareCall(consultaSQL); //UPCASTING tipo de objeto (PreparedStatement)
+            //DAR CLICK EN EL PLAY ES DECIR EJECUTAR LA CONSULTA
+            int res = ejecutar.executeUpdate();
+            if (res > 0) {
+                System.out.println("El producto ha sido creado con éxito");
+                ejecutar.close(); //Siempre cierro mi conlsuta
+            } else {
+                System.out.println("Favor ingrese correctamente los datos solicitados: ");
+                ejecutar.close(); //Siempre cierro mi conlsuta
+            }
 
-            int filasAfectadas = ejecutar.executeUpdate();
-            return filasAfectadas > 0;
-        } catch (SQLException e) {
-            System.out.println("Error al insertar producto: " + e);
-            return false;
+        } catch (SQLException e) { //Captura el error el (e)
+            System.out.println("Por favor, Comuníquese con el Administrador, gracias!!" + e);
         }
+        return false;
     }
 
     public List<Producto> listarProductosPorProveedor(int idProveedor) {
