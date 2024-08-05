@@ -15,24 +15,23 @@ public class Proveedor {
     private String nombre;
     private String apellido;
     private String cedula;
-    private String clave;
     private String telefono;
     private String direccion;
 
     public Proveedor() {
     }
 
-    public Proveedor(int idProveedor, String codigo, String nombreEmpresa, String nombre, String apellido, String cedula, String clave, String telefono, String direccion) {
+    public Proveedor(int idProveedor, String codigo, String nombreEmpresa, String nombre, String apellido, String cedula, String telefono, String direccion) {
         this.idProveedor = idProveedor;
         this.codigo = codigo;
         this.nombreEmpresa = nombreEmpresa;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
-        this.clave = clave;
         this.telefono = telefono;
         this.direccion = direccion;
     }
+
 
     public int getIdProveedor() {
         return idProveedor;
@@ -81,14 +80,6 @@ public class Proveedor {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
     }
 
     public String getTelefono() {

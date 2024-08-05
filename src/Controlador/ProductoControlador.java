@@ -23,9 +23,9 @@ public class ProductoControlador {
     PreparedStatement ejecutar; //Ayuda a ejecutar la consulta que nosostros enviemos
     ResultSet resultado;
     
-    public boolean insertarProducto(Producto producto, int idProveedor) {
+    public boolean insertarProducto(Producto p, int idProveedor) {
         try {
-            String consultaSQL = "INSERT INTO producto (Pr_Codigo, Pr_Nombre, Pr_FechaVence, Pr_Precio, Pr_CantidadStock, Pr_Tipo, Pro_Id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String consultaSQL = "INSERT INTO producto (Pr_Codigo, Pr_Nombre, Pr_FechaVence, Pr_Precio, Pr_CantidadStock, Pr_Tipo, Pro_Id) VALUES ('"+generarCodigoProducto()+"','"+p.getNombre()+"','"+p.getFechaVence()+"','"+p.getPrecio()+"','"+p.getCantStock()+"','"+p.getTipo()+"','"+p.getIdProveedor()+"')";
             ejecutar = (PreparedStatement) connection.prepareCall(consultaSQL);
             ejecutar.setString(1, producto.getCodigo());
             ejecutar.setString(2, producto.getNombre());

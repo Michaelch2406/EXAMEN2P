@@ -9,6 +9,7 @@ package modelo;
  * @author LENOVO
  */
 public class Producto {
+
     private int idProducto;
     private String codigo;
     private String nombre;
@@ -16,11 +17,12 @@ public class Producto {
     private double precio;
     private int cantStock;
     private String tipo;
+    private int idProveedor;
 
     public Producto() {
     }
 
-    public Producto(int idProducto, String codigo, String nombre, String fechaVence, double precio, int cantStock, String tipo) {
+    public Producto(int idProducto, String codigo, String nombre, String fechaVence, double precio, int cantStock, String tipo, int idProveedor) {
         this.idProducto = idProducto;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -28,6 +30,7 @@ public class Producto {
         this.precio = precio;
         this.cantStock = cantStock;
         this.tipo = tipo;
+        this.idProveedor = idProveedor;
     }
 
     public int getIdProducto() {
@@ -84,5 +87,14 @@ public class Producto {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }    
+    }
+
+    public int getIdProveedor() {
+        return idProveedor;
+    }
+
+    public void setIdProveedor(int idProveedor) {
+        this.idProveedor = idProveedor;
+    }
+
 }
