@@ -10,22 +10,28 @@ package modelo;
  */
 public class Proveedor {
     private int idProveedor;
+    private String codigo;
+    private String nombreEmpresa;
     private String nombre;
     private String apellido;
     private String cedula;
     private String clave;
     private String telefono;
+    private String direccion;
 
     public Proveedor() {
     }
 
-    public Proveedor(int idProveedor, String nombre, String apellido, String cedula, String clave, String telefono) {
+    public Proveedor(int idProveedor, String codigo, String nombreEmpresa, String nombre, String apellido, String cedula, String clave, String telefono, String direccion) {
         this.idProveedor = idProveedor;
+        this.codigo = codigo;
+        this.nombreEmpresa = nombreEmpresa;
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
         this.clave = clave;
         this.telefono = telefono;
+        this.direccion = direccion;
     }
 
     public int getIdProveedor() {
@@ -35,6 +41,23 @@ public class Proveedor {
     public void setIdProveedor(int idProveedor) {
         this.idProveedor = idProveedor;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
+    }
+
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
+    }
+    
 
     public String getNombre() {
         return nombre;
@@ -74,6 +97,14 @@ public class Proveedor {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
 }
